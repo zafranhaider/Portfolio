@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 {
     "version": 2,
@@ -15,3 +16,21 @@
         }
     ]
 }
+=======
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "app.py",
+            "use": "@vercel/python",
+            "config": { "maxLambdaSize": "15mb", "runtime": "python3.8" }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "app.py"
+        }
+    ]
+}
+>>>>>>> a3ad8b48e25867bcb26296c6be2306aceceeba93
