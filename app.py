@@ -27,6 +27,15 @@ def index():
 @app.route('/submit', methods=['POST'])
 def submit():
         # Send email notification
+    name = request.form['name']
+    email = request.form['email']
+    message = request.form['message']
+    
+    contact = Contact(name=name, email=email, message=message)
+    db.session.add(contact)
+    db.session.commit()
+        # Add the new contact to the database
+
     send_email_notification(name, email, message)
     
     return render_template('index.html')
