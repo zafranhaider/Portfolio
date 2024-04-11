@@ -26,15 +26,6 @@ def index():
 #Contacts
 @app.route('/submit', methods=['POST'])
 def submit():
-    name = request.form['name']
-    email = request.form['email']
-    message = request.form['message']
-    
-    contact = Contact(name=name, email=email, message=message)
-    db.session.add(contact)
-    db.session.commit()
-        # Add the new contact to the database
-
         # Send email notification
     send_email_notification(name, email, message)
     
@@ -47,4 +38,4 @@ def send_email_notification(name, email, message):
     mail.send(msg)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
