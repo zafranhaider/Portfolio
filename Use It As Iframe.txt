@@ -1,0 +1,1 @@
+<iframe src="URL_OF_YOUR_FLASK_PROJECT" style="width:100%; height:500px;"></iframe>
